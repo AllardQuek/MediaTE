@@ -9,6 +9,8 @@ import Switch from "@material-ui/core/Switch";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
+import { SUMMARY_API_KEY } from "../config";
+
 const UploadTextField = ({
   uploadText,
   setUploadText,
@@ -19,7 +21,6 @@ const UploadTextField = ({
   translate,
   setTranslate,
 }) => {
-  console.log(translate);
   const { handleSubmit } = useForm();
 
   const handleVoiceChange = (event) => {
@@ -45,7 +46,7 @@ const UploadTextField = ({
     var options = {
       method: "POST",
       hostname: "api.meaningcloud.com",
-      path: `/summarization-1.0?key=59145f70db8c8ecb0c17705b131896fb&txt=${uploadText}&limit=10`,
+      path: `/summarization-1.0?key=${SUMMARY_API_KEY}&txt=${uploadText}&limit=10`,
       headers: {},
       maxRedirects: 20,
     };
