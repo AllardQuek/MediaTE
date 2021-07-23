@@ -115,23 +115,30 @@ const UploadTextField = ({
 
           <Grid item xs={12}>
             <form onSubmit={handleSubmit(summarise)} className="summarise-btn">
-              <Button type="submit" variant="contained" color="primary">
-                Summarise
-              </Button>{" "}
               {!summarisedText && (
-                <span className="subtitle__text">
-                  your text or generate videos from the full text
-                </span>
+                <>
+                  <Button type="submit" variant="contained" color="primary">
+                    Summarise
+                  </Button>{" "}
+                  <span className="subtitle__text">
+                    your text or generate videos from the full text
+                  </span>
+                </>
               )}
               {summarisedText && (
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  onClick={unsummarise}
-                >
-                  Un-Summarise
-                </Button>
+                <>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="secondary"
+                    onClick={unsummarise}
+                  >
+                    Un-Summarise
+                  </Button>{" "}
+                  <span className="subtitle__text">
+                    to use the full text in the video
+                  </span>
+                </>
               )}
             </form>
           </Grid>

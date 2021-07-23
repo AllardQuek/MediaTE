@@ -1,8 +1,10 @@
 import { useState } from "react";
 
 import { Button, Card, Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
+import ReactPlayer from "react-player";
 import styled from "styled-components";
 
 import "./App.css";
@@ -12,6 +14,19 @@ import Snack from "./components/Snack";
 import Title from "./components/Title";
 import UploadTextField from "./components/UploadTextField";
 import VideoUploader from "./components/VideoUploader";
+
+const useStyles = makeStyles(() => ({
+  video: {
+    marginTop: "1rem",
+    position: "relative",
+    paddingTop: "56.25%",
+  },
+  player: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+  },
+}));
 
 function App() {
   const { handleSubmit } = useForm();
@@ -23,10 +38,12 @@ function App() {
   const [summarisedText, setSummarisedText] = useState(uploadText);
   const [uploadEmail, setUploadEmail] = useState("");
   const [translate, setTranslate] = useState(false);
+  const [isGeneratorPage, setIsGeneratorPage] = useState(false);
   const successMessage =
     "Submitted! You will receive the result video in your email when it is ready. This should take about 5 minutes for a ~20s video. Please contact us at mediate.official@gmail.com if you face any difficulties! :)";
   const errorMessage =
     "Sorry, our services are currently not running. Please contact at mediate.official@gmail.com  for assistance!";
+  const classes = useStyles();
 
   const submit = (data) => {
     setSubmitting(true);
@@ -65,6 +82,10 @@ function App() {
       });
   };
 
+  const toggleGenerator = () => {
+    setIsGeneratorPage(!isGeneratorPage);
+  };
+
   return (
     <AppStyled>
       <div className="App">
@@ -79,46 +100,86 @@ function App() {
 
         <Card elevation="5" className="card-container">
           <Title />
-          <Grid container spacing={0}>
-            <Grid item xs={12}>
-              <EmailField setUploadEmail={setUploadEmail} />
-            </Grid>
-            <Grid item xs={12}>
-              <UploadTextField
-                uploadText={uploadText}
-                setUploadText={setUploadText}
-                summarisedText={summarisedText}
-                setSummarisedText={setSummarisedText}
-                voice={voice}
-                setVoice={setVoice}
-                translate={translate}
-                setTranslate={setTranslate}
-              />
-            </Grid>
-            <Grid item xs={0} sm={2}></Grid>
-            <Grid item xs={12} sm={8} className="dropzone-grid">
-              <VideoUploader />
-            </Grid>
-            <Grid item xs={0} sm={2}></Grid>
-            <Grid item xs={12}>
-              <div className="upload-btn">
-                {submitting ? (
-                  <CustomBeatLoader submitting={submitting} />
-                ) : (
-                  <form onSubmit={handleSubmit(submit)} className="uploads">
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      color="primary"
-                      size="large"
-                    >
-                      Send my video
-                    </Button>
-                  </form>
-                )}
+          {!isGeneratorPage && (
+            <div>
+              <h2>
+                Generate an AI video with some text and a video of a face!
+              </h2>
+
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={toggleGenerator}
+                className="goto__button"
+              >
+                Get Started
+              </Button>
+              <div className={classes.video}>
+                <ReactPlayer
+                  className={classes.player}
+                  height="100%"
+                  width="100%"
+                  pip={true}
+                  controls={true}
+                  url="https://youtu.be/mA7vj2mloIw"
+                />
               </div>
+            </div>
+          )}
+          {isGeneratorPage && (
+            <Grid container spacing={0}>
+              <Grid item xs={12}>
+                <Button
+                  variant="outlined"
+                  size="small"
+                  color="primary"
+                  onClick={toggleGenerator}
+                >
+                  view pitch video
+                </Button>
+                <br />
+                <br />
+              </Grid>
+              <Grid item xs={12}>
+                <EmailField setUploadEmail={setUploadEmail} />
+              </Grid>
+              <Grid item xs={12}>
+                <UploadTextField
+                  uploadText={uploadText}
+                  setUploadText={setUploadText}
+                  summarisedText={summarisedText}
+                  setSummarisedText={setSummarisedText}
+                  voice={voice}
+                  setVoice={setVoice}
+                  translate={translate}
+                  setTranslate={setTranslate}
+                />
+              </Grid>
+              <Grid item xs={0} sm={2}></Grid>
+              <Grid item xs={12} sm={8} className="dropzone-grid">
+                <VideoUploader />
+              </Grid>
+              <Grid item xs={0} sm={2}></Grid>
+              <Grid item xs={12}>
+                <div className="upload-btn">
+                  {submitting ? (
+                    <CustomBeatLoader submitting={submitting} />
+                  ) : (
+                    <form onSubmit={handleSubmit(submit)} className="uploads">
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        color="primary"
+                        size="large"
+                      >
+                        Generate my video
+                      </Button>
+                    </form>
+                  )}
+                </div>
+              </Grid>
             </Grid>
-          </Grid>
+          )}
         </Card>
 
         <Snack severity="success" message={complete} setMessage={setComplete} />
