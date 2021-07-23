@@ -1,5 +1,4 @@
-# LifeHack 2021 README
-ProgrammerError (126)
+# LifeHack 2021 ProgrammerError (126)
 Members: Allard Quek, Jovyn Tan, Lee Zhi Xuan, Erwin QuekLifehack 2021 theme / problem statement:
 
 
