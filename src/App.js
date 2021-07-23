@@ -26,7 +26,7 @@ function App() {
   const successMessage =
     "Submitted! You will receive the result video in your email when it is ready. This should take about 5 minutes for a ~20s video. Please contact us at anytutor.official@gmail.com if you face any difficulties! :)";
   const errorMessage =
-    "Sorry, our services are currently not running. Please contact us for assistance!";
+    "Sorry, our services are currently not running. Please contact us at mediate.official@gmail.com for assistance!";
 
   const submit = (data) => {
     setSubmitting(true);
@@ -120,7 +120,7 @@ const AppStyled = styled.div`
   flex-direction: column;
   align-items: center;
   transition: all 1s ease;
-  height: 150vh;
+  height: 200vh;
   width: 100vw;
   background: linear-gradient(rgba(22, 35, 122, 0.9), rgba(69, 22, 122, 0.9));
   background-color: black;
