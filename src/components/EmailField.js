@@ -15,6 +15,9 @@ const EmailField = ({ setUploadEmail }) => {
         variant="outlined"
         onChange={handleChangeEmail}
       />
+      <span className="subtitle__text">
+        <sup>We'll send the generated video to this email :)</sup>
+      </span>
     </div>
   );
 };
