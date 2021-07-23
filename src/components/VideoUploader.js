@@ -16,7 +16,20 @@ const Uploader = () => {
 
   const url =
     "https://5n58vjjzdd.execute-api.ap-southeast-1.amazonaws.com/default/getVidPresignedURL";
-  const inputContent = "Drop 1 Video File (.mp4) of a Face";
+  const inputContent = (
+    <div className="text-container">
+      Drop 1 Video File (.mp4) of a Face
+      <br />
+      <br />
+      <sup className="instruction__text">
+        Max Video Size: <b>10MB</b>
+        <br />
+        We recommend that you pick short video. Less than 10s will do! :)
+        <br />
+        Your video must have a face in every frame!
+      </sup>
+    </div>
+  );
   const contentType = "video/mp4";
 
   const handleChangeStatus = (file, status) => {
@@ -68,7 +81,7 @@ const Uploader = () => {
   const submitStyles = {
     dropzone: {
       overflow: "auto",
-      padding: "1.5rem",
+      padding: "5rem",
       backgroundColor: "var(--dropzone-bg-color)",
     },
     dropzoneReject: {
@@ -116,6 +129,13 @@ const Uploader = () => {
 
 const VideoUploaderStyled = styled.div`
   margin-top: 1rem;
+
+  .instruction__text {
+    font-weight: 400;
+    color: black;
+    font-size: 11pt;
+    line-height: 9pt;
+  }
 `;
 
 export default Uploader;

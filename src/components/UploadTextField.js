@@ -84,11 +84,6 @@ const UploadTextField = ({
               variant="outlined"
               onChange={handleChangeText}
             />
-            {!summarisedText && (
-              <span className="subtitle__text">
-                <sup>Your text isn't summarised - we'll generate your video from the full text</sup>
-              </span>
-            )}
           </Grid>
 
           <Grid item xs={12} sm={6}>
@@ -110,7 +105,8 @@ const UploadTextField = ({
                 />
                 <span className="subtitle__text">
                   <sup>
-                    We'll use this <b>summarised</b> text to generate your video!
+                    We'll use this <b>summarised</b> text to generate your
+                    video!
                   </sup>
                 </span>
               </div>
@@ -122,8 +118,18 @@ const UploadTextField = ({
               <Button type="submit" variant="contained" color="primary">
                 Summarise
               </Button>{" "}
+              {!summarisedText && (
+                <span className="subtitle__text">
+                  your text or generate videos from the full text
+                </span>
+              )}
               {summarisedText && (
-                <Button type="submit" variant="contained" color="primary" onClick={unsummarise}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  onClick={unsummarise}
+                >
                   Un-Summarise
                 </Button>
               )}
@@ -131,10 +137,12 @@ const UploadTextField = ({
           </Grid>
           <Grid item xs={12}>
             <Grid container spacing={3}>
-              <Grid item xs={1}></Grid>
-              <Grid item xs={5}>
+              <Grid item xs={0} sm={2} />
+              <Grid item xs={12} sm={3}>
                 <FormControl className="voice-dropdown">
-                  <InputLabel htmlFor="voice-native-helper">Select a Voice</InputLabel>
+                  <InputLabel htmlFor="voice-native-helper">
+                    Select a Voice
+                  </InputLabel>
                   <NativeSelect
                     value={voice}
                     disabled={translate}
@@ -152,17 +160,24 @@ const UploadTextField = ({
                   <FormHelperText>Select your voice</FormHelperText>
                 </FormControl>
               </Grid>
-              <Grid item xs={1}>
+              <Grid item xs={12} sm={2} className="or-word">
+                OR
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={12} sm={3}>
                 <FormGroup row>
                   <FormControlLabel
-                    control={<Switch checked={translate} onChange={handleChange} name="checkedA" />}
+                    control={
+                      <Switch
+                        checked={translate}
+                        onChange={handleChange}
+                        name="checkedA"
+                      />
+                    }
                     label="Translate to Chinese"
                   />
                 </FormGroup>
               </Grid>
-              <Grid item xs={1}></Grid>
+              <Grid item xs={0} sm={2} />
             </Grid>
           </Grid>
         </Grid>
@@ -184,6 +199,13 @@ const UploadTextFieldStyled = styled.div`
 
   h3 {
     margin-bottom: -0.5rem;
+  }
+
+  .or-word {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 200;
   }
 `;
 

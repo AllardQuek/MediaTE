@@ -11,13 +11,11 @@ const EmailField = ({ setUploadEmail }) => {
         className="text-field"
         id="outlined-multiline-static"
         label="Your email here"
+        helperText="We'll send your generated video to this email"
         rows={1}
         variant="outlined"
         onChange={handleChangeEmail}
       />
-      <span className="subtitle__text">
-        <sup>We'll send the generated video to this email :)</sup>
-      </span>
     </div>
   );
 };

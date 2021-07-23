@@ -18,6 +18,7 @@ const Title = () => {
             <b>T</b>O <b>E</b>DUCATE
           </span>
         </span>
+        <h2>Generate an AI video with some text and a video of a face!</h2>
       </div>
     </TitleStyled>
   );
