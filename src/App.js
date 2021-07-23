@@ -75,23 +75,24 @@ function App() {
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
         </Helmet>
-        <div className="header">
-          <span className="header__title">
-            <b>
-              <i>
-                media<span className="accent-color">te</span>
-              </i>
-            </b>
-          </span>
-          <br />
-          <span className="header__subtitle">
-            MEDIA
-            <span className="accent-color">
-              <b>T</b>O <b>E</b>DUCATE
-            </span>
-          </span>
-        </div>
+       
         <Card elevation="5" className="card-container">
+          <div className="header">
+            <span className="header__title">
+              <b>
+                <i>
+                  media<span className="accent-color">te</span>
+                </i>
+              </b>
+            </span>
+            <br />
+            <span className="header__subtitle">
+              MEDIA
+              <span className="accent-color">
+                <b>T</b>O <b>E</b>DUCATE
+              </span>
+            </span>
+          </div>
           <EmailField setUploadEmail={setUploadEmail} />
           <UploadTextField
             setUploadText={setUploadText}
@@ -126,8 +127,8 @@ const AppStyled = styled.div`
   height: 100vh;
   width: 100vw;
   background: linear-gradient(
-    rgba(209, 242, 255, 0.8),
-    rgba(209, 222, 255, 0.8)
+    rgba(22, 35, 122, 0.9),
+    rgba(69, 22, 122, 0.9)
   );
   background-color: black;
 
