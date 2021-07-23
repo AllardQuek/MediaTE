@@ -13,6 +13,7 @@ code {
 }
 
 * {
+  --accent-color: purple;
   --primary-color: #f6f9fd;
   --secondary-color: #6c757d;
   --background-dark-color: #10121a;

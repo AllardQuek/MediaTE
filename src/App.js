@@ -77,35 +77,40 @@ function App() {
         </Helmet>
         <div className="header">
           <span className="header__title">
-            <b><i>media<span className="accent-color">te</span></i></b>
+            <b>
+              <i>
+                media<span className="accent-color">te</span>
+              </i>
+            </b>
           </span>
           <br />
           <span className="header__subtitle">
-            MEDIA <span className="accent-color">
-            <b>T</b>O <b>E</b>DUCATE
+            MEDIA
+            <span className="accent-color">
+              <b>T</b>O <b>E</b>DUCATE
             </span>
           </span>
         </div>
         <Card elevation="5" className="card-container">
-        <EmailField setUploadEmail={setUploadEmail} />
-        <UploadTextField
-          setUploadText={setUploadText}
-          voice={voice}
-          setVoice={setVoice}
-        />
-        <VideoUploader />
+          <EmailField setUploadEmail={setUploadEmail} />
+          <UploadTextField
+            setUploadText={setUploadText}
+            voice={voice}
+            setVoice={setVoice}
+          />
+          <VideoUploader />
 
-        <div className="submit-btn">
-          {submitting ? (
-            <CustomBeatLoader submitting={submitting} />
-          ) : (
-            <form onSubmit={handleSubmit(submit)} className="uploads">
-              <Button type="submit" variant="contained" color="primary">
-                Upload
-              </Button>
-            </form>
-          )}
-        </div>
+          <div className="upload-btn">
+            {submitting ? (
+              <CustomBeatLoader submitting={submitting} />
+            ) : (
+              <form onSubmit={handleSubmit(submit)} className="uploads">
+                <Button type="submit" variant="contained" color="primary">
+                  Upload
+                </Button>
+              </form>
+            )}
+          </div>
         </Card>
       </div>
     </AppStyled>
@@ -120,10 +125,13 @@ const AppStyled = styled.div`
   transition: all 1s ease;
   height: 100vh;
   width: 100vw;
-  background:linear-gradient(rgba(209, 242, 255,0.8),rgba(209, 222, 255,0.8));
-  background-color:black /*this your primary color*/
+  background: linear-gradient(
+    rgba(209, 242, 255, 0.8),
+    rgba(209, 222, 255, 0.8)
+  );
+  background-color: black;
 
-  .submit-btn {
+  .upload-btn {
     margin-top: 1rem;
   }
 

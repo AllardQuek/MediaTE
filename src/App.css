@@ -1,5 +1,5 @@
 .App {
-    height: 100vh;
+  height: 100vh;
 }
 
 .card-container {
@@ -13,7 +13,7 @@
 }
 
 .header__title {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 3em;
   margin-bottom: 0px;
   padding: 0;
@@ -24,5 +24,5 @@
 }
 
 .accent-color {
-  color: purple
+  color: var(--accent-color);
 }
