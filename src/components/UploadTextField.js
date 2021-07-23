@@ -1,8 +1,11 @@
 import { Button, TextField } from "@material-ui/core";
 import FormControl from "@material-ui/core/FormControl";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormGroup from "@material-ui/core/FormGroup";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import InputLabel from "@material-ui/core/InputLabel";
 import NativeSelect from "@material-ui/core/NativeSelect";
+import Switch from "@material-ui/core/Switch";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
@@ -13,7 +16,10 @@ const UploadTextField = ({
   setSummarisedText,
   voice,
   setVoice,
+  translate,
+  setTranslate,
 }) => {
+  console.log(translate);
   const { handleSubmit } = useForm();
 
   const handleVoiceChange = (event) => {
@@ -22,6 +28,10 @@ const UploadTextField = ({
 
   const handleChangeText = (event) => {
     setUploadText(event.target.value);
+  };
+
+  const handleChange = (event) => {
+    setTranslate(!translate);
   };
 
   const unsummarise = () => {
@@ -96,23 +106,37 @@ const UploadTextField = ({
           </div>
         )}
 
-        <FormControl className="voice-dropdown">
-          <InputLabel htmlFor="voice-native-helper">Voice Type</InputLabel>
-          <NativeSelect
-            value={voice}
-            onChange={handleVoiceChange}
-            inputProps={{
-              name: "voice",
-              id: "voice-native-helper",
-            }}
-          >
-            <option value="Joanna">US female</option>
-            <option value="Joey">US male</option>
-            <option value="Geraint">Welsh male</option>
-            <option value="Raveena">Indian female</option>
-          </NativeSelect>
-          <FormHelperText>Select your voice</FormHelperText>
-        </FormControl>
+        <FormGroup row>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={translate}
+                onChange={handleChange}
+                name="checkedA"
+              />
+            }
+            label="Translate to Chinese"
+          />
+        </FormGroup>
+        {!translate && (
+          <FormControl className="voice-dropdown">
+            <InputLabel htmlFor="voice-native-helper">Voice Type</InputLabel>
+            <NativeSelect
+              value={voice}
+              onChange={handleVoiceChange}
+              inputProps={{
+                name: "voice",
+                id: "voice-native-helper",
+              }}
+            >
+              <option value="Joanna">US female</option>
+              <option value="Joey">US male</option>
+              <option value="Geraint">Welsh male</option>
+              <option value="Raveena">Indian female</option>
+            </NativeSelect>
+            <FormHelperText>Select your voice</FormHelperText>
+          </FormControl>
+        )}
       </div>
     </UploadTextFieldStyled>
   );
