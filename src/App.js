@@ -97,10 +97,10 @@ function App() {
               />
             </Grid>
             <Grid container spacing={1}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={8}>
                 <VideoUploader />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} sm={4}>
                 <VideoInfo />
               </Grid>
             </Grid>
