@@ -77,7 +77,7 @@ function App() {
         </Helmet>
         <div className="header">
           <span className="header__title">
-            <b><b>media<span className="accent-color">te</span></b></b>
+            <b><i>media<span className="accent-color">te</span></i></b>
           </span>
           <br />
           <span className="header__subtitle">
