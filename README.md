@@ -1,4 +1,7 @@
 # LifeHack 2021 README
+ProgrammerError (126)
+Members: Allard Quek, Jovyn Tan, Lee Zhi Xuan, Erwin QuekLifehack 2021 theme / problem statement:
+
 
 ## Theme / problem statement:
 
@@ -58,6 +61,3 @@ Our proposed hack, MediaTE, encompasses both the social and education theme of t
     7. Confirm your choice of video by clicking submit. (Don't worry if the video you have chosen disappears from the field after clicking submit)
     8. Click on Send My Video and you are done!
 
-## Our Team - ProgrammerError (126):
-
- Members: Allard Quek, Jovyn Tan, Lee Zhi Xuan, Erwin Quek**Lifehack 2021 theme / problem statement:**
