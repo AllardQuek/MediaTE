@@ -26,7 +26,7 @@ const UploadTextField = ({ setUploadText, voice, setVoice }) => {
           variant="outlined"
           onChange={handleChangeText}
         />
-        <FormControl className="form-control">
+        <FormControl className="voice-dropdown">
           <InputLabel htmlFor="voice-native-helper">Voice Type</InputLabel>
           <NativeSelect
             value={voice}
@@ -50,6 +50,10 @@ const UploadTextField = ({ setUploadText, voice, setVoice }) => {
 
 const UploadTextFieldStyled = styled.div`
   margin-top: 1rem;
+
+  .voice-dropdown {
+    margin-top: 1rem;
+  }
 `;
 
 export default UploadTextField;

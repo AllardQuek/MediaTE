@@ -1,0 +1,36 @@
+# .eslintrc.yaml
+# Configuration: https://eslint.org/docs/user-guide/configuring
+# Using with Prettier: https://prettier.io/docs/en/integrating-with-linters.html#recommended-configuration
+extends:
+  - eslint:recommended
+  - plugin:import/errors
+  - plugin:import/warnings
+  - plugin:import/typescript
+plugins:
+  - import
+settings:
+  import/resolver:
+    node:
+      extensions: [".js", ".jsx", ".ts", ".tsx"]
+      moduleDirectory: ["node_modules", "src/"]
+rules:
+  import/order:
+    - warn
+    - groups:
+        - builtin
+        - external
+        - internal
+        - - parent
+          - sibling
+      pathGroups:
+        - pattern: react
+          group: external
+          position: before
+      pathGroupsExcludedImportTypes:
+        - builtin
+      newlines-between: always
+      alphabetize:
+        order: asc
+        caseInsensitive: true
+  no-unused-vars:
+    - warn
