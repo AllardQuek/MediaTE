@@ -1,4 +1,6 @@
-**Lifehack 2021 theme / problem statement:**
+#LifeHack 2021 README
+
+**Theme / problem statement:**
 
 1. Social
 In a post-COVID-19 world where face-to-face interaction is no longer the main mode of communication, how would you revolutionize making new and/or maintaining relationships?
