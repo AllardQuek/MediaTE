@@ -86,10 +86,7 @@ const UploadTextField = ({
             />
             {!summarisedText && (
               <span className="subtitle__text">
-                <sup>
-                  Your text isn't summarised - we'll generate your video from
-                  the full text!
-                </sup>
+                <sup>Your text isn't summarised - we'll generate your video from the full text</sup>
               </span>
             )}
           </Grid>
@@ -113,8 +110,7 @@ const UploadTextField = ({
                 />
                 <span className="subtitle__text">
                   <sup>
-                    We'll use this <b>summarised</b> text to generate your
-                    video!
+                    We'll use this <b>summarised</b> text to generate your video!
                   </sup>
                 </span>
               </div>
@@ -127,54 +123,46 @@ const UploadTextField = ({
                 Summarise
               </Button>{" "}
               {summarisedText && (
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="primary"
-                  onClick={unsummarise}
-                >
+                <Button type="submit" variant="contained" color="primary" onClick={unsummarise}>
                   Un-Summarise
                 </Button>
               )}
             </form>
           </Grid>
-          <Grid item xs={3}></Grid>
-          <Grid item xs={6}>
-            <FormGroup row>
-              <FormControlLabel
-                control={
-                  <Switch
-                    checked={translate}
-                    onChange={handleChange}
-                    name="checkedA"
+          <Grid item xs={12}>
+            <Grid container spacing={1}>
+              <Grid item xs={2}></Grid>
+              <Grid item xs={5}>
+                <FormControl className="voice-dropdown">
+                  <InputLabel htmlFor="voice-native-helper">Select a Voice</InputLabel>
+                  <NativeSelect
+                    value={voice}
+                    disabled={translate}
+                    onChange={handleVoiceChange}
+                    inputProps={{
+                      name: "voice",
+                      id: "voice-native-helper",
+                    }}
+                  >
+                    <option value="Joanna">US female</option>
+                    <option value="Joey">US male</option>
+                    <option value="Geraint">Welsh male</option>
+                    <option value="Raveena">Indian female</option>
+                  </NativeSelect>
+                  <FormHelperText>Select your voice</FormHelperText>
+                </FormControl>
+              </Grid>
+              <Grid item xs={3}>
+                <FormGroup row>
+                  <FormControlLabel
+                    control={<Switch checked={translate} onChange={handleChange} name="checkedA" />}
+                    label="Translate to Chinese"
                   />
-                }
-                label="Translate to Chinese"
-              />
-            </FormGroup>
-            {!translate && (
-              <FormControl className="voice-dropdown">
-                <InputLabel htmlFor="voice-native-helper">
-                  Select a Voice
-                </InputLabel>
-                <NativeSelect
-                  value={voice}
-                  onChange={handleVoiceChange}
-                  inputProps={{
-                    name: "voice",
-                    id: "voice-native-helper",
-                  }}
-                >
-                  <option value="Joanna">US female</option>
-                  <option value="Joey">US male</option>
-                  <option value="Geraint">Welsh male</option>
-                  <option value="Raveena">Indian female</option>
-                </NativeSelect>
-                <FormHelperText>Select your voice</FormHelperText>
-              </FormControl>
-            )}
+                </FormGroup>
+              </Grid>
+              <Grid item xs={2}></Grid>
+            </Grid>
           </Grid>
-          <Grid item xs={3}></Grid>
         </Grid>
       </div>
     </UploadTextFieldStyled>
