@@ -8,7 +8,10 @@ import styled from "styled-components";
 import "./App.css";
 import CustomBeatLoader from "./components/CustomBeatLoader";
 import EmailField from "./components/EmailField";
+import Snack from "./components/Snack";
+import Title from "./components/Title";
 import UploadTextField from "./components/UploadTextField";
+import VideoInfo from "./components/VideoInfo";
 import VideoUploader from "./components/VideoUploader";
 
 function App() {
@@ -26,8 +29,6 @@ function App() {
 
   const submit = (data) => {
     setSubmitting(true);
-    console.log("HERE");
-    console.log(submitting);
 
     // * Endpoint to lambda that will run our notebook
     const url =
@@ -75,22 +76,7 @@ function App() {
         </Helmet>
 
         <Card elevation="5" className="card-container">
-          <div className="header">
-            <span className="header__title">
-              <b>
-                <i>
-                  media<span className="accent-color">te</span>
-                </i>
-              </b>
-            </span>
-            <br />
-            <span className="header__subtitle">
-              MEDIA
-              <span className="accent-color">
-                <b>T</b>O <b>E</b>DUCATE
-              </span>
-            </span>
-          </div>
+          <Title />
           <EmailField setUploadEmail={setUploadEmail} />
           <UploadTextField
             setUploadText={setUploadText}
@@ -98,6 +84,7 @@ function App() {
             setVoice={setVoice}
           />
           <VideoUploader />
+          <VideoInfo />
 
           <div className="upload-btn">
             {submitting ? (
@@ -105,12 +92,19 @@ function App() {
             ) : (
               <form onSubmit={handleSubmit(submit)} className="uploads">
                 <Button type="submit" variant="contained" color="primary">
-                  Upload
+                  Send my video
                 </Button>
               </form>
             )}
           </div>
         </Card>
+
+        <Snack severity="success" message={complete} setMessage={setComplete} />
+        <Snack
+          severity="error"
+          message={error} // If error is not empty string, show Snack
+          setMessage={setError}
+        />
       </div>
     </AppStyled>
   );
@@ -135,10 +129,7 @@ const AppStyled = styled.div`
     width: 100%;
   }
 
-  .form-control {
-    margin-top: 1rem;
-  }
-
+  // Following is for text fields
   .MuiOutlinedInput-root {
     fieldset,
     .Mui-focused fieldset {
