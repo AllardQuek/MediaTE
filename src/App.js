@@ -116,7 +116,7 @@ const AppStyled = styled.div`
   flex-direction: column;
   align-items: center;
   transition: all 1s ease;
-  height: 100vh;
+  height: 150vh;
   width: 100vw;
   background: linear-gradient(rgba(22, 35, 122, 0.9), rgba(69, 22, 122, 0.9));
   background-color: black;
