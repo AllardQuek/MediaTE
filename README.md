@@ -1,3 +1,11 @@
+<p align="center">
+    <h1 align="center"> MediaTE </h1>
+</p>
+<p align="center">
+  <img src="/readme/logo.png" />
+</p>
+
+
 ## Inspiration
 The COVID19 pandemic has limited the frequency face-to-face interactions. The lack of physical lessons may make it harder to be engaged in learning. MediaTE aims to bring a "people element" to digitised learning, increasing engagement by turning mundane walls of text into exciting videos narrated by any person of your choice.
 
