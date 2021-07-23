@@ -40,8 +40,8 @@ Our proposed hack, MediaTE, encompasses both the social and education theme of t
 
 a. Convert a plain wall of text into a dialogue voiced by their favourite characters?
     1. Enter your email address into the email field (The resultant video will be sent to this email address)
-    2. Type or paste the body of text that you want to feature in your video. Ensure that it is not too lengthy.
-    3. Select the type of voice that you want to be reading the body of text in your resultant video.
+    1. Type or paste the body of text that you want to feature in your video. Ensure that it is not too lengthy.
+    1. Select the type of voice that you want to be reading the body of text in your resultant video.
     4. Choose a video to upload. Bear in mind that this video should have a face in every frame, or the resultant video cannot be generated. Additionally, this video must not be larger than 10MB or longer than 1 minute. 
     5. Confirm your choice of video by clicking submit. (Don't worry if the video you have chosen disappears from the field after clicking submit)
     6. Click on Send My Video and you are done!
