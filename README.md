@@ -38,7 +38,7 @@ Our proposed hack, MediaTE, encompasses both the social and education theme of t
 
 ## How to
 
-A. Convert a plain wall of text into a dialogue voiced by their favourite characters?
+A) Convert a plain wall of text into a dialogue voiced by their favourite characters?
     1) Enter your email address into the email field (The resultant video will be sent to this email address)
     2) Type or paste the body of text that you want to feature in your video. Ensure that it is not too lengthy.
     3) Select the type of voice that you want to be reading the body of text in your resultant video.
