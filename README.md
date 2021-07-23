@@ -2,7 +2,7 @@
 Members: Allard Quek, Jovyn Tan, Lee Zhi Xuan, Erwin Quek
 
 
-## Theme / problem statement:
+## Theme / problem statement
 
 1. Social
 In a post-COVID-19 world where face-to-face interaction is no longer the main mode of communication, how would you revolutionize making new and/or maintaining relationships?
@@ -16,7 +16,7 @@ As technology rapidly infiltrates the education sector and changes not just the 
 3. As a student, I would like to have a creative and fun learning tool that will make learning more enjoyable and less rigid
 4. As an educator, I would like to create more engaging videos about the content taught so I can spice up my lessons in order to engage my students better. 
 
-## Our Hack:
+## Our Hack
 
 Our proposed hack, MediaTE, encompasses both the social and education theme of this event. MediaTE is a platform that allows users to:
 
@@ -35,7 +35,7 @@ Our proposed hack, MediaTE, encompasses both the social and education theme of t
 - AWS SageMaker
 - Amazon S3
 
-## How to:
+## How to
 
 1. Convert a plain wall of text into a dialogue voiced by their favourite characters?
     1. Enter your email address into the email field (The resultant video will be sent to this email address)
