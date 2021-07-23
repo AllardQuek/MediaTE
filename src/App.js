@@ -11,7 +11,6 @@ import EmailField from "./components/EmailField";
 import Snack from "./components/Snack";
 import Title from "./components/Title";
 import UploadTextField from "./components/UploadTextField";
-import VideoInfo from "./components/VideoInfo";
 import VideoUploader from "./components/VideoUploader";
 
 function App() {
@@ -96,14 +95,11 @@ function App() {
                 setTranslate={setTranslate}
               />
             </Grid>
-            <Grid container spacing={1}>
-              <Grid item xs={12} sm={8}>
-                <VideoUploader />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                <VideoInfo />
-              </Grid>
+            <Grid item xs={0} sm={2}></Grid>
+            <Grid item xs={12} sm={8} className="dropzone-grid">
+              <VideoUploader />
             </Grid>
+            <Grid item xs={0} sm={2}></Grid>
             <Grid item xs={12}>
               <div className="upload-btn">
                 {submitting ? (
@@ -177,6 +173,12 @@ const AppStyled = styled.div`
     flex-direction: row;
     justify-content: center;
     margin-top: 1rem;
+  }
+
+  .dropzone-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 `;
 
