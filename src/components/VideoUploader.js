@@ -2,11 +2,11 @@ import "react-dropzone-uploader/dist/styles.css";
 import { useState } from "react";
 
 import Dropzone from "react-dropzone-uploader";
+import styled from "styled-components";
 
 import CustomBeatLoader from "./CustomBeatLoader";
 import CustomDialog from "./CustomDialog";
 import Snack from "./Snack";
-import styled from "styled-components";
 
 const Uploader = () => {
   const axios = require("axios").default;
