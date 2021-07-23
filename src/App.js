@@ -167,31 +167,6 @@ const AppStyled = styled.div`
   .MuiInput-underline:after {
     border-bottom: 2px solid var(--success-color);
   }
-
-  .card-container {
-    padding: 50px;
-  }
-
-  .header {
-    margin-top: 60px;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 1px white;
-  }
-
-  .header__title {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 3em;
-    margin-bottom: 0px;
-    padding: 0;
-  }
-
-  .header__subtitle {
-    letter-spacing: 3px;
-  }
-
-  .accent-color {
-    color: purple
-  }
 `;
 
 export default App;
