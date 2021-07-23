@@ -25,7 +25,7 @@ function App() {
   const [uploadEmail, setUploadEmail] = useState("");
   const [translate, setTranslate] = useState(false);
   const successMessage =
-    "Submitted! You will receive the result video in your email when it is ready. This should take about 5 minutes for a ~20s video. Please contact us at anytutor.official@gmail.com if you face any difficulties! :)";
+    "Submitted! You will receive the result video in your email when it is ready. This should take about 5 minutes for a ~20s video. Please contact us at mediate.official@gmail.com if you face any difficulties! :)";
   const errorMessage =
     "Sorry, our services are currently not running. Please contact at mediate.official@gmail.com  for assistance!";
 
@@ -92,6 +92,8 @@ function App() {
                 setSummarisedText={setSummarisedText}
                 voice={voice}
                 setVoice={setVoice}
+                translate={translate}
+                setTranslate={setTranslate}
               />
             </Grid>
             <Grid container spacing={1}>
