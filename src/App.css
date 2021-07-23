@@ -7,3 +7,11 @@
   padding: 50px;
   max-width: 80vw;
 }
+
+.text-container {
+  padding: 10px;
+}
+
+.subtitle__text {
+  color: grey;
+}

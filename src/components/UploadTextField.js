@@ -56,14 +56,6 @@ const UploadTextField = ({ uploadText, setUploadText, summarisedText, setSummari
 		req.end();
 	};
 
-	const UneditableTextField = withStyles({
-		root: {
-			"& .MuiInputBase-root.Mui-disabled": {
-				color: "black", // (default alpha is 0.38)
-			},
-		},
-	})(TextField);
-
 	return (
 		<UploadTextFieldStyled>
 			<div className="field">
@@ -78,6 +70,11 @@ const UploadTextField = ({ uploadText, setUploadText, summarisedText, setSummari
 							variant="outlined"
 							onChange={handleChangeText}
 						/>
+						{!summarisedText && (
+							<span className="subtitle__text">
+								<sup>Your text isn't summarised - we'll generate your video from the full text!</sup>
+							</span>
+						)}
 					</Grid>
 
 					<Grid item xs={12} sm={6}>
@@ -85,17 +82,23 @@ const UploadTextField = ({ uploadText, setUploadText, summarisedText, setSummari
 						{summarisedText && (
 							<div>
 								{/* <h3>Summarised Text</h3> */}
-								<UneditableTextField
-									className="text-field__uneditable"
+								<TextField
+									className="text-field"
 									id="outlined-multiline-static"
 									label="Summarised Text"
 									value={summarisedText}
-									disabled
 									multiline
 									rows={12}
 									variant="outlined"
+									InputProps={{
+										readOnly: true,
+									}}
 								/>
-								<sub>We'll use the summarised text to generate your video!</sub>
+								<span className="subtitle__text">
+									<sup>
+										We'll use this <b>summarised</b> text to generate your video!
+									</sup>
+								</span>
 							</div>
 						)}
 					</Grid>
@@ -112,24 +115,27 @@ const UploadTextField = ({ uploadText, setUploadText, summarisedText, setSummari
 							)}
 						</form>
 					</Grid>
-
-					<FormControl className="voice-dropdown">
-						<InputLabel htmlFor="voice-native-helper">Voice Type</InputLabel>
-						<NativeSelect
-							value={voice}
-							onChange={handleVoiceChange}
-							inputProps={{
-								name: "voice",
-								id: "voice-native-helper",
-							}}
-						>
-							<option value="Joanna">US female</option>
-							<option value="Joey">US male</option>
-							<option value="Geraint">Welsh male</option>
-							<option value="Raveena">Indian female</option>
-						</NativeSelect>
-						<FormHelperText>Select your voice</FormHelperText>
-					</FormControl>
+					<Grid item xs={3}></Grid>
+					<Grid item xs={6}>
+						<FormControl className="voice-dropdown">
+							<InputLabel htmlFor="voice-native-helper">Voice Type</InputLabel>
+							<NativeSelect
+								value={voice}
+								onChange={handleVoiceChange}
+								inputProps={{
+									name: "voice",
+									id: "voice-native-helper",
+								}}
+							>
+								<option value="Joanna">US female</option>
+								<option value="Joey">US male</option>
+								<option value="Geraint">Welsh male</option>
+								<option value="Raveena">Indian female</option>
+							</NativeSelect>
+							<FormHelperText>Select your voice</FormHelperText>
+						</FormControl>
+					</Grid>
+					<Grid item xs={3}></Grid>
 				</Grid>
 			</div>
 		</UploadTextFieldStyled>
@@ -139,9 +145,12 @@ const UploadTextField = ({ uploadText, setUploadText, summarisedText, setSummari
 const UploadTextFieldStyled = styled.div`
 	margin-top: 1rem;
 
-	.voice-dropdown,
+	.voice-dropdown {
+		width: 100%;
+	}
+
 	.summarise-btn {
-		margin-top: 1rem;
+		margin-top: -1rem;
 	}
 
 	h3 {

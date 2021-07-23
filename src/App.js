@@ -25,8 +25,7 @@ function App() {
 	const [uploadEmail, setUploadEmail] = useState("");
 	const successMessage =
 		"Submitted! You will receive the result video in your email when it is ready. This should take about 5 minutes for a ~20s video. Please contact us at anytutor.official@gmail.com if you face any difficulties! :)";
-	const errorMessage =
-		"Sorry, our services are currently not running. Please contact us at mediate.official@gmail.com for assistance!";
+	const errorMessage = "Sorry, our services are currently not running. Please contact us for assistance!";
 
 	const submit = (data) => {
 		setSubmitting(true);
@@ -88,21 +87,27 @@ function App() {
 								setVoice={setVoice}
 							/>
 						</Grid>
-						<Grid item xs={12}>
-							<VideoUploader />
-							<VideoInfo />
+						<Grid container spacing={1}>
+							<Grid item xs={12} sm={6}>
+								<VideoUploader />
+							</Grid>
+							<Grid item xs={12} sm={6}>
+								<VideoInfo />
+							</Grid>
 						</Grid>
-						<div className="upload-btn">
-							{submitting ? (
-								<CustomBeatLoader submitting={submitting} />
-							) : (
-								<form onSubmit={handleSubmit(submit)} className="uploads">
-									<Button type="submit" variant="contained" color="primary">
-										Send my video
-									</Button>
-								</form>
-							)}
-						</div>
+						<Grid item xs={12}>
+							<div className="upload-btn">
+								{submitting ? (
+									<CustomBeatLoader submitting={submitting} />
+								) : (
+									<form onSubmit={handleSubmit(submit)} className="uploads">
+										<Button type="submit" variant="contained" color="primary" size="large">
+											Send my video
+										</Button>
+									</form>
+								)}
+							</div>
+						</Grid>
 					</Grid>
 				</Card>
 
@@ -134,11 +139,6 @@ const AppStyled = styled.div`
 
 	.text-field {
 		width: 100%;
-	}
-
-	.text-field__uneditable {
-		width: 100%;
-		color: black;
 	}
 
 	// Following is for text fields
