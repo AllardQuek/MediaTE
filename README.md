@@ -1,65 +1,30 @@
-# LifeHack 2021 - Team ProgrammerError (126)
-Members: Allard Quek, Jovyn Tan, Lee Zhi Xuan, Erwin Quek
+## Inspiration
+The COVID19 pandemic has limited the frequency face-to-face interactions. The lack of physical lessons may make it harder to be engaged in learning. MediaTE aims to bring a "people element" to digitised learning, increasing engagement by turning mundane walls of text into exciting videos narrated by any person of your choice.
 
-
-## Theme / problem statement
-
-1. Social
-In a post-COVID-19 world where face-to-face interaction is no longer the main mode of communication, how would you revolutionize making new and/or maintaining relationships?
-
-2. Education
-As technology rapidly infiltrates the education sector and changes not just the way people learn, but also how people teach, what refreshing ideas do you have to make learning/teaching more safe, exciting, and effective?
-
-## User Stories
-
-1. As a student, I would want to be able to summarise paragraphs in an instant so that I will be able to make notes more efficiently.
-2. As a student, I would like to be able to share my summarised notes with my course-mates, especially if it can be entertaining. I believe that this would make it easier to make friends as well. 
-3. As a student, I would like to have a creative and fun learning tool that will make learning more enjoyable, less rigid and prevent Zoom fatigue these days.
-4. As an educator, I would like to create more engaging videos about the content taught so I can spice up my lessons to engage my students better even as I seldom get the chance to have face-to-face interactions with them. 
-
-## Our Hack
-
-Our proposed hack, MediaTE, encompasses both the social and education theme of this event. MediaTE is a platform that allows users to:
-
-1. Convert a plain wall of text into a dialogue voiced by their favourite characters.
+## What it does
+MediaTE (Media To Educate) is a platform that allows users to:
+1. Convert a plain wall of text into an entertaining video voiced by their favourite characters or idols. 
 2. Distil the essence of tedious paragraphs in an instant.
-3. Better still, we could even summarise paragraphs and turn them into entertaining dialogues voiced by anyone under the sun.
+3. Overcome challenges faced by learners of English as their second language.
 
-## Tech Stack
+## How we built it 🛠
+We built the frontend using React and deployed the app on Vercel. The backend is written in Python, with the text-to-speech done by AWS Polly and video generation using Wav2Lip. We are using AWS Lambda and Amazon API GateWay to support the automation of the file uploads and to run our model on Amazon SageMaker.
 
-- ReactJS
-- Python
-- Wav2Lip
-- AWS Polly (Text-to-Speech)
-- AWS Lambda
-- AWS APIGateWay
-- AWS SageMaker
-- Amazon S3
-
-## How to
-
-A. Convert a plain wall of text into a dialogue voiced by their favourite characters?
-1. Enter your email address into the email field (The resultant video will be sent to this email address)
-2. Type or paste the body of text that you want to feature in your video. Ensure that it is not too lengthy.
-3. Select the type of voice that you want to be reading the body of text in your resultant video.
-4. Choose a video to upload. Bear in mind that this video should have a face in every frame, or the resultant video cannot be generated. Additionally, this video must not be larger than 10MB or longer than 1 minute. 
-5. Confirm your choice of video by clicking submit. (Don't worry if the video you have chosen disappears from the field after clicking submit)
-6. Click on Send My Video and you are done!
+![Alt text](/readme/architecture.png "Solution Architecture")
 
 
-B. Distil the essence of tedious paragraphs in an instant?
-1. Type or paste the paragraph that you want to summarise into the text box.
-2. Click on Summarise to get the summary
-3. To summarise another paragraph, click on un-summarise and repeat from step 1.
+## Challenges we ran into 🧗
+1. Limited Time
+    As we only had 24 hours to work on our hack, we were only able to implement adequate functionality to tackle the problem. If not for the tight deadline, we would have been able to implement additional features into our hack such that it would be better equipped to address the issue.
 
+2. Limited Budget
+    Due to the fact that we do not have a budget to work with, we were only able to support the creation of 1 video at any one time. In order to minimise the cost that we will incur, we are only able to turn the features on while we're developing. If you'd like to test the features out, please reach out to us at [mediate.official@gmail.com](mailto:mediate.official@gmail.com) to make arrangements with us.
 
-C. Summarise paragraphs and turn them into entertaining dialogues voiced by anyone under the sun.
-1. Enter your email address into the email field (The resultant video will be sent to this email address)
-2. Type or paste the paragraph that you want to summarise into the text box. Ensure that it is not too lengthy
-3. Click on Summarise to get the summary
-4. Select the type of voice that you want to be reading the body of text in your resultant video.
-5. Choose a video to upload. Bear in mind that this video should have a face in every frame, or the resultant video cannot be generated. Additionally, this video must not be larger than 10MB or longer than 1 minute.
-6. Choose a video to upload. Again, bear in mind that this video should have a face in every frame, or the resultant video cannot be generated and that this video must not be larger than 10MB or longer than 1 minute. 
-7. Confirm your choice of video by clicking submit. (Don't worry if the video you have chosen disappears from the field after clicking submit)
-8. Click on Send My Video and you are done!
+## Accomplishments that we're proud of
+We are proud that our hack can potentially brighten things up in the age of virtual classrooms and help to minimise zoom fatigue. The translation feature that we have included makes our hack Boomer-friendly as well. We are confident that the concept of our hack can attract students and educators alike and see real-life uses. 
 
+## What we learned
+
+## What's next for MediaTE
+- Support for more languages; we only implemented translation to Chinese due to time constraints.
+- Improve the concurrency of our system; right now, our hack is only able to support the creation of 1 such video at any one time and only the latest requests will be processed, provided that there are no other users using it at that time.
