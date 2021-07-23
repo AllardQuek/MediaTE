@@ -1,5 +1,5 @@
 # LifeHack 2021 - Team ProgrammerError (126)
-Members: Allard Quek, Jovyn Tan, Lee Zhi Xuan, Erwin QuekLifehack 2021 theme / problem statement:
+Members: Allard Quek, Jovyn Tan, Lee Zhi Xuan, Erwin Quek
 
 
 ## Theme / problem statement:
