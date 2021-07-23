@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Button, Card } from "@material-ui/core";
+import { Button, Card, Grid } from "@material-ui/core";
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
@@ -27,7 +27,7 @@ function App() {
   const successMessage =
     "Submitted! You will receive the result video in your email when it is ready. This should take about 5 minutes for a ~20s video. Please contact us at anytutor.official@gmail.com if you face any difficulties! :)";
   const errorMessage =
-    "Sorry, our services are currently not running. Please contact us at mediate.official@gmail.com for assistance!";
+    "Sorry, our services are currently not running. Please contact at mediate.official@gmail.com  for assistance!";
 
   const submit = (data) => {
     setSubmitting(true);
@@ -80,31 +80,47 @@ function App() {
 
         <Card elevation="5" className="card-container">
           <Title />
-          <EmailField setUploadEmail={setUploadEmail} />
-          <UploadTextField
-            uploadText={uploadText}
-            setUploadText={setUploadText}
-            summarisedText={summarisedText}
-            setSummarisedText={setSummarisedText}
-            voice={voice}
-            setVoice={setVoice}
-            translate={translate}
-            setTranslate={setTranslate}
-          />
-          <VideoUploader />
-          <VideoInfo />
-
-          <div className="upload-btn">
-            {submitting ? (
-              <CustomBeatLoader submitting={submitting} />
-            ) : (
-              <form onSubmit={handleSubmit(submit)} className="uploads">
-                <Button type="submit" variant="contained" color="primary">
-                  Send my video
-                </Button>
-              </form>
-            )}
-          </div>
+          <Grid container spacing={0}>
+            <Grid item xs={12}>
+              <EmailField setUploadEmail={setUploadEmail} />
+            </Grid>
+            <Grid item xs={12}>
+              <UploadTextField
+                uploadText={uploadText}
+                setUploadText={setUploadText}
+                summarisedText={summarisedText}
+                setSummarisedText={setSummarisedText}
+                voice={voice}
+                setVoice={setVoice}
+              />
+            </Grid>
+            <Grid container spacing={1}>
+              <Grid item xs={12} sm={6}>
+                <VideoUploader />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <VideoInfo />
+              </Grid>
+            </Grid>
+            <Grid item xs={12}>
+              <div className="upload-btn">
+                {submitting ? (
+                  <CustomBeatLoader submitting={submitting} />
+                ) : (
+                  <form onSubmit={handleSubmit(submit)} className="uploads">
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      color="primary"
+                      size="large"
+                    >
+                      Send my video
+                    </Button>
+                  </form>
+                )}
+              </div>
+            </Grid>
+          </Grid>
         </Card>
 
         <Snack severity="success" message={complete} setMessage={setComplete} />
@@ -124,7 +140,7 @@ const AppStyled = styled.div`
   flex-direction: column;
   align-items: center;
   transition: all 1s ease;
-  height: 200vh;
+  min-height: 100vh;
   width: 100vw;
   background: linear-gradient(rgba(22, 35, 122, 0.9), rgba(69, 22, 122, 0.9));
   background-color: black;

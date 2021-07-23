@@ -11,7 +11,6 @@ const EmailField = ({ setUploadEmail }) => {
         className="text-field"
         id="outlined-multiline-static"
         label="Your email here"
-        multiline
         rows={1}
         variant="outlined"
         onChange={handleChangeEmail}

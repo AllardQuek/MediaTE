@@ -1,4 +1,4 @@
-import { Button, TextField } from "@material-ui/core";
+import { Button, Grid, TextField } from "@material-ui/core";
 import FormControl from "@material-ui/core/FormControl";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormGroup from "@material-ui/core/FormGroup";
@@ -75,69 +75,109 @@ const UploadTextField = ({
   return (
     <UploadTextFieldStyled>
       <div className="field">
-        <TextField
-          className="text-field"
-          id="outlined-multiline-static"
-          label="Your text here"
-          multiline
-          rows={12}
-          variant="outlined"
-          onChange={handleChangeText}
-        />
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={summarisedText ? 6 : 12}>
+            <TextField
+              className="text-field"
+              id="outlined-multiline-static"
+              label="Your text here"
+              multiline
+              rows={10}
+              variant="outlined"
+              onChange={handleChangeText}
+            />
+            {!summarisedText && (
+              <span className="subtitle__text">
+                <sup>
+                  Your text isn't summarised - we'll generate your video from
+                  the full text!
+                </sup>
+              </span>
+            )}
+          </Grid>
 
-        {/* Trigger to summarise text */}
-        <form onSubmit={handleSubmit(summarise)} className="summarise-btn">
-          <Button type="submit" variant="contained" color="primary">
-            Summarise
-          </Button>
-        </form>
+          <Grid item xs={12} sm={6}>
+            {/* Trigger to summarise text */}
+            {summarisedText && (
+              <div>
+                {/* <h3>Summarised Text</h3> */}
+                <TextField
+                  className="text-field"
+                  id="outlined-multiline-static"
+                  label="Summarised Text"
+                  value={summarisedText}
+                  multiline
+                  rows={10}
+                  variant="outlined"
+                  InputProps={{
+                    readOnly: true,
+                  }}
+                />
+                <span className="subtitle__text">
+                  <sup>
+                    We'll use this <b>summarised</b> text to generate your
+                    video!
+                  </sup>
+                </span>
+              </div>
+            )}
+          </Grid>
 
-        {summarisedText && (
-          <div>
-            <h3>Summarised Text</h3>
-            <p>{summarisedText}</p>
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              onClick={unsummarise}
-            >
-              Un-Summarise
-            </Button>
-          </div>
-        )}
-
-        <FormGroup row>
-          <FormControlLabel
-            control={
-              <Switch
-                checked={translate}
-                onChange={handleChange}
-                name="checkedA"
+          <Grid item xs={12}>
+            <form onSubmit={handleSubmit(summarise)} className="summarise-btn">
+              <Button type="submit" variant="contained" color="primary">
+                Summarise
+              </Button>{" "}
+              {summarisedText && (
+                <Button
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  onClick={unsummarise}
+                >
+                  Un-Summarise
+                </Button>
+              )}
+            </form>
+          </Grid>
+          <Grid item xs={3}></Grid>
+          <Grid item xs={6}>
+            <FormGroup row>
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={translate}
+                    onChange={handleChange}
+                    name="checkedA"
+                  />
+                }
+                label="Translate to Chinese"
               />
-            }
-            label="Translate to Chinese"
-          />
-        </FormGroup>
-        {!translate && (
-          <FormControl className="voice-dropdown">
-            <InputLabel htmlFor="voice-native-helper">Voice Type</InputLabel>
-            <NativeSelect
-              value={voice}
-              onChange={handleVoiceChange}
-              inputProps={{
-                name: "voice",
-                id: "voice-native-helper",
-              }}
-            >
-              <option value="Joanna">US female</option>
-              <option value="Joey">US male</option>
-              <option value="Geraint">Welsh male</option>
-              <option value="Raveena">Indian female</option>
-            </NativeSelect>
-            <FormHelperText>Select your voice</FormHelperText>
-          </FormControl>
-        )}
+            </FormGroup>
+            {!translate && (
+              <FormControl className="voice-dropdown">
+                <InputLabel htmlFor="voice-native-helper">
+                  Voice Type
+                </InputLabel>
+                <NativeSelect
+                  value={voice}
+                  onChange={handleVoiceChange}
+                  inputProps={{
+                    name: "voice",
+                    id: "voice-native-helper",
+                  }}
+                >
+                  <option value="Joanna">US female</option>
+                  <option value="Joey">US male</option>
+                  <option value="Geraint">Welsh male</option>
+                  <option value="Raveena">Indian female</option>
+                </NativeSelect>
+                <FormHelperText>Select your voice</FormHelperText>
+              </FormControl>
+            )}
+          </Grid>
+          <Grid item xs={3}></Grid>
+        </Grid>
       </div>
     </UploadTextFieldStyled>
   );
@@ -146,9 +186,12 @@ const UploadTextField = ({
 const UploadTextFieldStyled = styled.div`
   margin-top: 1rem;
 
-  .voice-dropdown,
+  .voice-dropdown {
+    width: 100%;
+  }
+
   .summarise-btn {
-    margin-top: 1rem;
+    margin-top: -1rem;
   }
 
   h3 {
