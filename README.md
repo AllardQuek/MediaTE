@@ -38,7 +38,7 @@ Our proposed hack, MediaTE, encompasses both the social and education theme of t
 
 ## How to
 
-a. Convert a plain wall of text into a dialogue voiced by their favourite characters?
+A. Convert a plain wall of text into a dialogue voiced by their favourite characters?
     1. Enter your email address into the email field (The resultant video will be sent to this email address)
     1. Type or paste the body of text that you want to feature in your video. Ensure that it is not too lengthy.
     1. Select the type of voice that you want to be reading the body of text in your resultant video.
@@ -46,12 +46,12 @@ a. Convert a plain wall of text into a dialogue voiced by their favourite charac
     5. Confirm your choice of video by clicking submit. (Don't worry if the video you have chosen disappears from the field after clicking submit)
     6. Click on Send My Video and you are done!
 
-b. Distil the essence of tedious paragraphs in an instant?
+B. Distil the essence of tedious paragraphs in an instant?
     1. Type or paste the paragraph that you want to summarise into the text box.
     2. Click on Summarise to get the summary
     3. To summarise another paragraph, click on un-summarise and repeat from step 1.
 
-c. Summarise paragraphs and turn them into entertaining dialogues voiced by anyone under the sun.
+C. Summarise paragraphs and turn them into entertaining dialogues voiced by anyone under the sun.
     1. Enter your email address into the email field (The resultant video will be sent to this email address)
     2. Type or paste the paragraph that you want to summarise into the text box. Ensure that it is not too lengthy
     3. Click on Summarise to get the summary
