@@ -2,7 +2,12 @@
     <h1 align="center"> MediaTE </h1>
 </p>
 <p align="center">
-  <img src="/readme/logo.png" />
+  <a href="https://youtu.be/mA7vj2mloIw">
+    <img src="/readme/logo.png" />
+  </a>
+</p>
+<p align="center">
+  View our demo video <a href="https://youtu.be/sSmaW7rKj0s">here</a>!
 </p>
 
 ## Inspiration ✨
