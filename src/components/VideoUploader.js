@@ -16,7 +16,7 @@ const Uploader = () => {
 
   const url =
     "https://5n58vjjzdd.execute-api.ap-southeast-1.amazonaws.com/default/getVidPresignedURL";
-  const inputContent = "Drop 1 Video File (.mp4) of a Face";
+  const inputContent = "Drop 1 Video File (.mp4) of a Face (Max File size: 10MB, Max Duration: 1 minute)";
   const contentType = "video/mp4";
 
   const handleChangeStatus = (file, status) => {
