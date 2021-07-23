@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+**Lifehack 2021 theme / problem statement:**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Social
+In a post-COVID-19 world where face-to-face interaction is no longer the main mode of communication, how would you revolutionize making new and/or maintaining relationships?
+2. Education
+As technology rapidly infiltrates the education sector and changes not just the way people learn, but also how people teach, what refreshing ideas do you have to make learning/teaching more safe, exciting, and effective?
 
-## Available Scripts
+**User Stories**
 
-In the project directory, you can run:
+1. As a student, I would want to be able to summarise paragraphs in an instant so that I will be able to make notes more efficiently.
+2. As a student, I would like to be able to share my summarised notes with my course-mates, especially if it can be entertaining.
+3. As a student, I would like to have a creative and fun learning tool that will make learning more enjoyable and less rigid
+4. As an educator, I would like to create more engaging videos about the content taught so I can spice up my lessons in order to engage my students better. 
 
-### `yarn start`
+**Our Hack:**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Our proposed hack, MediaTE, encompasses both the social and education theme of this event. MediaTE is a platform that allows users to:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Convert a plain wall of text into a dialogue voiced by their favourite characters.
+2. Distil the essence of tedious paragraphs in an instant.
+3. Better still, we could even summarise paragraphs and turn them into entertaining dialogues voiced by anyone under the sun.
 
-### `yarn test`
+**Tech Stack**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ReactJS
+- Python
+- Wav2Lip
+- AWS Polly (Text-to-Speech)
+- AWS Lambda
+- AWS APIGateWay
+- AWS SageMaker
+- Amazon S3
 
-### `yarn build`
+**How to:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Convert a plain wall of text into a dialogue voiced by their favourite characters?
+    1. Enter your email address into the email field (The resultant video will be sent to this email address)
+    2. Type or paste the body of text that you want to feature in your video. Ensure that it is not too lengthy.
+    3. Select the type of voice that you want to be reading the body of text in your resultant video.
+    4. Choose a video to upload. Bear in mind that this video should have a face in every frame, or the resultant video cannot be generated. Additionally, this video must not be larger than 10MB or longer than 1 minute. 
+    5. Confirm your choice of video by clicking submit. (Don't worry if the video you have chosen disappears from the field after clicking submit)
+    6. Click on Send My Video and you are done!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Distil the essence of tedious paragraphs in an instant?
+    1. Type or paste the paragraph that you want to summarise into the text box.
+    2. Click on Summarise to get the summary
+    3. To summarise another paragraph, click on un-summarise and repeat from step 1.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Summarise paragraphs and turn them into entertaining dialogues voiced by anyone under the sun.
+    1. Enter your email address into the email field (The resultant video will be sent to this email address)
+    2. Type or paste the paragraph that you want to summarise into the text box. Ensure that it is not too lengthy
+    3. Click on Summarise to get the summary
+    4. Select the type of voice that you want to be reading the body of text in your resultant video.
+    5. Choose a video to upload. Bear in mind that this video should have a face in every frame, or the resultant video cannot be generated. Additionally, this video must not be larger than 10MB or longer than 1 minute.
+    6. Choose a video to upload. Again, bear in mind that this video should have a face in every frame, or the resultant video cannot be generated and that this video must not be larger than 10MB or longer than 1 minute. 
+    7. Confirm your choice of video by clicking submit. (Don't worry if the video you have chosen disappears from the field after clicking submit)
+    8. Click on Send My Video and you are done!
 
-### `yarn eject`
+**Our Team - ProgrammerError (126):** 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ Members: Allard Quek, Jovyn Tan, Lee Zhi Xuan, Erwin Quek**Lifehack 2021 theme / problem statement:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Social
+In a post-COVID-19 world where face-to-face interaction is no longer the main mode of communication, how would you revolutionize making new and/or maintaining relationships?
+2. Education
+As technology rapidly infiltrates the education sector and changes not just the way people learn, but also how people teach, what refreshing ideas do you have to make learning/teaching more safe, exciting, and effective?
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**User Stories**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. As a student, I would want to be able to summarise paragraphs in an instant so that I will be able to make notes more efficiently.
+2. As a student, I would like to be able to share my summarised notes with my course-mates, especially if it can be entertaining.
+3. As a student, I would like to have a creative and fun learning tool that will make learning more enjoyable and less rigid.
+4. As an educator, I would like to create more engaging videos about the content taught so I can spice up my lessons in order to engage my students better. 
 
-## Learn More
+**Our Hack:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Our proposed hack, MediaTE, encompasses both the social and education theme of this event. MediaTE is a platform that allows users to:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Convert a plain wall of text into a dialogue voiced by their favourite characters.
+2. Distil the essence of tedious paragraphs in an instant.
+3. Better still, we could even summarise paragraphs and turn them into entertaining dialogues voiced by anyone under the sun.
 
-### Code Splitting
+**Tech Stack**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- ReactJS
+- Python
+- Wav2Lip
+- AWS Polly (Text-to-Speech)
+- AWS Lambda
+- AWS APIGateWay
+- AWS SageMaker
+- Amazon S3
 
-### Analyzing the Bundle Size
+**How to:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Convert a plain wall of text into a dialogue voiced by their favourite characters?
+    1. Enter your email address into the email field (The resultant video will be sent to this email address).
+    2. Type or paste the body of text that you want to feature in your video. Ensure that it is not too lengthy.
+    3. Select the type of voice that you want to be reading the body of text in your resultant video.
+    4. Choose a video to upload. Bear in mind that this video should have a face in every frame, or the resultant video cannot be generated. Additionally, this video must not be larger than 10MB or longer than 1 minute. 
+    5. Confirm your choice of video by clicking submit. (Don't worry if the video you have chosen disappears from the field after clicking submit.)
+    6. Click on Send My Video and you are done!
 
-### Making a Progressive Web App
+2. Distil the essence of tedious paragraphs in an instant?
+    1. Type or paste the paragraph that you want to summarise into the text box.
+    2. Click on Summarise to get the summary.
+    3. To summarise another paragraph, click on un-summarise and repeat from step 1.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. Summarise paragraphs and turn them into entertaining dialogues voiced by anyone under the sun.
+    1. Enter your email address into the email field. (The resultant video will be sent to this email address)
+    2. Type or paste the paragraph that you want to summarise into the text box. Ensure that it is not too lengthy.
+    3. Click on Summarise to get the summary.
+    4. Select the type of voice that you want to be reading the body of text in your resultant video.
+    5. Choose a video to upload. Bear in mind that this video should have a face in every frame, or the resultant video cannot be generated. Additionally, this video must not be larger than 10MB or longer than 1 minute.
+    6. Choose a video to upload. Again, bear in mind that this video should have a face in every frame, or the resultant video cannot be generated and that this video must not be larger than 10MB or longer than 1 minute. 
+    7. Confirm your choice of video by clicking submit. (Don't worry if the video you have chosen disappears from the field after clicking submit.)
+    8. Click on Send My Video and you are done!
 
-### Advanced Configuration
+**Our Team - ProgrammerError (126):** 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ Members: Allard Quek, Jovyn Tan, Lee Zhi Xuan, Erwin Quek
