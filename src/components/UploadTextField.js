@@ -1,17 +1,66 @@
-import { TextField } from "@material-ui/core";
+import { useState } from "react";
+
+import { Button, TextField } from "@material-ui/core";
 import FormControl from "@material-ui/core/FormControl";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import InputLabel from "@material-ui/core/InputLabel";
 import NativeSelect from "@material-ui/core/NativeSelect";
+import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
-const UploadTextField = ({ setUploadText, voice, setVoice }) => {
+const UploadTextField = ({
+  uploadText,
+  setUploadText,
+  summarisedText,
+  setSummarisedText,
+  voice,
+  setVoice,
+}) => {
+  const { handleSubmit } = useForm();
+
   const handleVoiceChange = (event) => {
     setVoice(event.target.value);
   };
 
   const handleChangeText = (event) => {
     setUploadText(event.target.value);
+  };
+
+  const unsummarise = () => {
+    setSummarisedText("");
+  };
+
+  const summarise = (text) => {
+    var https = require("follow-redirects").https;
+    // var fs = require("fs");
+
+    var options = {
+      method: "POST",
+      hostname: "api.meaningcloud.com",
+      path: `/summarization-1.0?key=59145f70db8c8ecb0c17705b131896fb&txt=${uploadText}&limit=10`,
+      headers: {},
+      maxRedirects: 20,
+    };
+
+    var req = https.request(options, function (res) {
+      var chunks = [];
+
+      res.on("data", function (chunk) {
+        chunks.push(chunk);
+      });
+
+      res.on("end", function (chunk) {
+        var body = Buffer.concat(chunks);
+        var result = JSON.parse(body.toString());
+        setSummarisedText(result.summary);
+        console.log(result.summary);
+      });
+
+      res.on("error", function (error) {
+        console.error(error);
+      });
+    });
+    req.end();
   };
 
   return (
@@ -22,10 +71,33 @@ const UploadTextField = ({ setUploadText, voice, setVoice }) => {
           id="outlined-multiline-static"
           label="Your text here"
           multiline
-          rows={4}
+          rows={12}
           variant="outlined"
           onChange={handleChangeText}
         />
+
+        {/* Trigger to summarise text */}
+        <form onSubmit={handleSubmit(summarise)} className="summarise-btn">
+          <Button type="submit" variant="contained" color="primary">
+            Summarise
+          </Button>
+        </form>
+
+        {summarisedText && (
+          <div>
+            <h3>Summarised Text</h3>
+            <p>{summarisedText}</p>
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              onClick={unsummarise}
+            >
+              Un-Summarise
+            </Button>
+          </div>
+        )}
+
         <FormControl className="voice-dropdown">
           <InputLabel htmlFor="voice-native-helper">Voice Type</InputLabel>
           <NativeSelect
@@ -51,8 +123,13 @@ const UploadTextField = ({ setUploadText, voice, setVoice }) => {
 const UploadTextFieldStyled = styled.div`
   margin-top: 1rem;
 
-  .voice-dropdown {
+  .voice-dropdown,
+  .summarise-btn {
     margin-top: 1rem;
+  }
+
+  h3 {
+    margin-bottom: -0.5rem;
   }
 `;
 
