@@ -66,7 +66,7 @@ const UploadTextField = ({ uploadText, setUploadText, summarisedText, setSummari
 							id="outlined-multiline-static"
 							label="Your text here"
 							multiline
-							rows={12}
+							rows={10}
 							variant="outlined"
 							onChange={handleChangeText}
 						/>
@@ -88,7 +88,7 @@ const UploadTextField = ({ uploadText, setUploadText, summarisedText, setSummari
 									label="Summarised Text"
 									value={summarisedText}
 									multiline
-									rows={12}
+									rows={10}
 									variant="outlined"
 									InputProps={{
 										readOnly: true,

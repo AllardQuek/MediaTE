@@ -3,9 +3,10 @@
 }
 
 .card-container {
-  margin: 30px auto;
+  margin: 40px auto;
   padding: 50px;
-  max-width: 80vw;
+  width: 70vw;
+  max-width: 1000px;
 }
 
 .text-container {
