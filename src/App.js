@@ -21,6 +21,7 @@ function App() {
   const [error, setError] = useState("");
   const [voice, setVoice] = useState("Joanna");
   const [uploadText, setUploadText] = useState("");
+  const [summarisedText, setSummarisedText] = useState(uploadText);
   const [uploadEmail, setUploadEmail] = useState("");
   const successMessage =
     "Submitted! You will receive the result video in your email when it is ready. This should take about 5 minutes for a ~20s video. Please contact us at anytutor.official@gmail.com if you face any difficulties! :)";
@@ -42,7 +43,7 @@ function App() {
       },
       body: JSON.stringify({
         email: uploadEmail,
-        uploadText: uploadText,
+        uploadText: summarisedText || uploadText,
         lessonVid: false,
         mediaType: "media/mp4",
         voice: voice,
@@ -79,7 +80,10 @@ function App() {
           <Title />
           <EmailField setUploadEmail={setUploadEmail} />
           <UploadTextField
+            uploadText={uploadText}
             setUploadText={setUploadText}
+            summarisedText={summarisedText}
+            setSummarisedText={setSummarisedText}
             voice={voice}
             setVoice={setVoice}
           />
