@@ -1,17 +1,15 @@
 import { useState } from "react";
 
-import { useForm } from "react-hook-form";
-
+import { Button, Card } from "@material-ui/core";
 import { Helmet } from "react-helmet";
+import { useForm } from "react-hook-form";
 import styled from "styled-components";
-import VideoUploader from "./components/VideoUploader";
-import UploadTextField from "./components/UploadTextField";
 
-import { Button } from "@material-ui/core";
-import { Card } from "@material-ui/core";
 import "./App.css";
 import CustomBeatLoader from "./components/CustomBeatLoader";
 import EmailField from "./components/EmailField";
+import UploadTextField from "./components/UploadTextField";
+import VideoUploader from "./components/VideoUploader";
 
 function App() {
   const { handleSubmit } = useForm();
@@ -75,7 +73,7 @@ function App() {
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
         </Helmet>
-       
+
         <Card elevation="5" className="card-container">
           <div className="header">
             <span className="header__title">
@@ -126,31 +124,15 @@ const AppStyled = styled.div`
   transition: all 1s ease;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(
-    rgba(22, 35, 122, 0.9),
-    rgba(69, 22, 122, 0.9)
-  );
+  background: linear-gradient(rgba(22, 35, 122, 0.9), rgba(69, 22, 122, 0.9));
   background-color: black;
 
   .upload-btn {
     margin-top: 1rem;
   }
 
-  .form-label {
-    // Adding to global styles doesn't seem to work
-    color: var(--font-light-color);
-  }
-
   .text-field {
     width: 100%;
-  }
-
-  textarea,
-  label,
-  #voice-native-helper,
-  .MuiSvgIcon-root.MuiNativeSelect-icon,
-  .MuiFormHelperText-root.MuiFormHelperText-filled {
-    color: var(--font-light-color);
   }
 
   .form-control {
@@ -171,10 +153,6 @@ const AppStyled = styled.div`
   // When text field is focused, keep green color
   .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
     border-color: var(--success-color);
-  }
-
-  .MuiInput-underline:after {
-    border-bottom: 2px solid var(--success-color);
   }
 `;
 
