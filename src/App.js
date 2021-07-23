@@ -8,6 +8,7 @@ import VideoUploader from "./components/VideoUploader";
 import UploadTextField from "./components/UploadTextField";
 
 import { Button } from "@material-ui/core";
+import { Card } from "@material-ui/core";
 import "./App.css";
 import CustomBeatLoader from "./components/CustomBeatLoader";
 import EmailField from "./components/EmailField";
@@ -74,7 +75,18 @@ function App() {
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
         </Helmet>
-        <h1>MediaTE</h1>
+        <div className="header">
+          <span className="header__title">
+            <b><b>media<span className="accent-color">te</span></b></b>
+          </span>
+          <br />
+          <span className="header__subtitle">
+            MEDIA <span className="accent-color">
+            <b>T</b>O <b>E</b>DUCATE
+            </span>
+          </span>
+        </div>
+        <Card elevation="5" className="card-container">
         <EmailField setUploadEmail={setUploadEmail} />
         <UploadTextField
           setUploadText={setUploadText}
@@ -94,6 +106,7 @@ function App() {
             </form>
           )}
         </div>
+        </Card>
       </div>
     </AppStyled>
   );
@@ -104,8 +117,11 @@ const AppStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 1.6;
   transition: all 1s ease;
+  height: 100vh;
+  width: 100vw;
+  background:linear-gradient(rgba(209, 242, 255,0.8),rgba(209, 222, 255,0.8));
+  background-color:black /*this your primary color*/
 
   .submit-btn {
     margin-top: 1rem;
@@ -150,6 +166,31 @@ const AppStyled = styled.div`
 
   .MuiInput-underline:after {
     border-bottom: 2px solid var(--success-color);
+  }
+
+  .card-container {
+    padding: 50px;
+  }
+
+  .header {
+    margin-top: 60px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 1px white;
+  }
+
+  .header__title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3em;
+    margin-bottom: 0px;
+    padding: 0;
+  }
+
+  .header__subtitle {
+    letter-spacing: 3px;
+  }
+
+  .accent-color {
+    color: purple
   }
 `;
 
