@@ -130,8 +130,8 @@ const UploadTextField = ({
             </form>
           </Grid>
           <Grid item xs={12}>
-            <Grid container spacing={1}>
-              <Grid item xs={2}></Grid>
+            <Grid container spacing={3}>
+              <Grid item xs={1}></Grid>
               <Grid item xs={5}>
                 <FormControl className="voice-dropdown">
                   <InputLabel htmlFor="voice-native-helper">Select a Voice</InputLabel>
@@ -152,7 +152,9 @@ const UploadTextField = ({
                   <FormHelperText>Select your voice</FormHelperText>
                 </FormControl>
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={1}>
+              </Grid>
+              <Grid item xs={4}>
                 <FormGroup row>
                   <FormControlLabel
                     control={<Switch checked={translate} onChange={handleChange} name="checkedA" />}
@@ -160,7 +162,7 @@ const UploadTextField = ({
                   />
                 </FormGroup>
               </Grid>
-              <Grid item xs={2}></Grid>
+              <Grid item xs={1}></Grid>
             </Grid>
           </Grid>
         </Grid>
