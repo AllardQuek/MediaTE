@@ -62,9 +62,9 @@ We built the frontend using React and deployed the app on Vercel. The backend is
     - In addition, we had to work with a variety of AWS-related APIs to bring our solution together and we learnt about the risks of managing API keys securely. 
 
 ## Disclaimers 🙊
-Please only make 1 submission at a time. Only your latest request will be processed, provided there are no other requests currently in progress. This is because our operations cost real money and we have a limited budget. Additionally, this will allow more users the chance to get to use this application. That is also why there is a maximum file size of 10MB imposed. If you face any issues, please reach out to us at mediate.official@gmail.com. Thank you!
-
-Note that the quality of the generated video may be reduced to speed up our processing and reduce consumption of our limited resources. We seek your understanding on these matters. Thank you!
+- Please only make 1 submission at a time. Only your latest request will be processed, provided there are no other requests currently in progress. This is because our operations cost real money and we have a limited budget. Additionally, this will allow more users the chance to get to use this application. That is also why there is a maximum file size of 10MB imposed. 
+- If you do not receive an email after submitting a request, it could likely be due to other users already using the application. Feel free to reach out to us at mediate.official@gmail.com if you have any issues.
+- Note that the quality of the generated video may be reduced to speed up our processing and reduce consumption of our limited resources. We seek your understanding on these matters. Thank you!
 
 ## What's next for MediaTE 🏃‍♂️
 - Support for more languages; currently we have only implemented translation to Chinese due to time constraints, but it is certainly possible for us to extend our application to enable a greater variety of translations
