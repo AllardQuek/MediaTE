@@ -30,7 +30,7 @@ We built the frontend using React and deployed the app on Vercel. The backend is
 ## Tips on How to Use 💁‍♂️
 1. To get the most natural results, the media used should be cropped such that mainly the head is visible. This is so that the facial features can be more accurately recognised. 
 2. Movement of the body should be minimised so that the head portion is more or less in the same position. This is to ensure that when the video is looped, the transition will be smoother and more seamless. 
-3. As for the duration of the video, a short video of 5 to 10 seconds should suffice, and remember the file size limit of 10MB! If you are taking a selfie with your phone and it is too large, one way to fix this is to reduce the video quality to 720p or lower, or simply crop the video duration. We hope this helps!
+3. Take note of the file size limit of 10MB. If you are taking a selfie with your phone and it is too large, one way to fix this is to reduce the video quality to 720p or lower, or simply crop the video duration. We hope this helps!
 
 **Invalid Inputs:**
 1. Rotated images or videos of faces: For example, the model does not seem to work on upside-down faces. It is unlikely to have been trained on such faces
